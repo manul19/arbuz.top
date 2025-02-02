@@ -1,0 +1,122 @@
+body {
+  background-color: #161e25;
+  color: #fff;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  margin: 0;
+}
+
+img {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 20px;
+  opacity: 0;
+  animation: dropIn 1s ease-in-out forwards, float 3s ease-in-out 1s infinite;
+}
+
+@keyframes dropIn {
+  from {
+      transform: translateY(-100%);
+      opacity: 0;
+  }
+  to {
+      transform: translateY(0);
+      opacity: 1;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+      transform: translateY(0);
+  }
+  50% {
+      transform: translateY(-10px);
+  }
+}
+
+a {
+  color: #27ae60;
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: 600;
+  display: block;
+  margin: 10px 0;
+  transition: color 0.3s;
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
+a:nth-child(1) {
+  animation-delay: 1s;
+  transform: translateX(-100%);
+  animation-name: slideInLeft;
+}
+
+a:nth-child(2) {
+  animation-delay: 1.5s;
+  transform: translateX(100%);
+  animation-name: slideInRight;
+}
+
+@keyframes fadeIn {
+  to {
+      opacity: 1;
+  }
+}
+
+@keyframes slideInLeft {
+  to {
+      transform: translateX(0);
+      opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  to {
+      transform: translateX(0);
+      opacity: 1;
+  }
+}
+
+a:hover {
+  text-decoration: underline;
+  color: #259453;
+}
+
+footer {
+  font-size: 12px;
+  font-weight: 400;
+  color: #d8d8d8;
+  padding: 10px;
+  position: absolute;
+  bottom: -50px;
+  animation: slideUp 1s ease-in-out forwards;
+  animation-delay: 2s;
+}
+
+@keyframes slideUp {
+  to {
+      bottom: 10px;
+  }
+}
+
+footer a {
+  color: #d8d8d8;
+  margin: 0 10px;
+  display: inline;
+  font-size: 14px;
+  font-weight: 600; 
+  transition: color 0.3s;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #a3a3a3;
+  text-decoration: none;
+}
